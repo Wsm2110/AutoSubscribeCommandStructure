@@ -30,8 +30,10 @@ namespace InfraModule
         /// </summary>
         private void RegisterCommands()
         {
-            _subCommands = new List<SubCommand>();
-            _subCommands.Add(new SubCommand("Test1", () => { }));
+            _subCommands = new List<SubCommand>
+            {
+                new SubCommand("Test1", () => { })
+            };
         }
 
         /// <summary>

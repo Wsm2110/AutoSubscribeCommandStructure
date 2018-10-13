@@ -15,7 +15,6 @@ namespace TestRunnerArchitecture
     public class Program : IHandle<RegisterCommandsArgs>
     {
         private static IContainer _container;
-
         private static IList<SubCommand> subCommand;
 
         static void Main(string[] args)
