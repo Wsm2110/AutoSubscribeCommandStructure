@@ -1,0 +1,9 @@
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\InfraModule.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\InfraModule.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\Entities.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\Entities.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\Entities.dll.config
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraCommand.csprojResolveAssemblyReference.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraCommand.csproj.CoreCompileInputs.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraModule.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraModule.pdb

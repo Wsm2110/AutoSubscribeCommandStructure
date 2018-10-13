@@ -1,0 +1,10 @@
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\VMwareCommand.dll.config
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\VMwareCommand.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\VMwareCommand.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\Entities.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\Entities.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\bin\Debug\Entities.dll.config
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\obj\Debug\VMwareCommand.csprojResolveAssemblyReference.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\obj\Debug\VMwareCommand.csproj.CoreCompileInputs.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\obj\Debug\VMwareCommand.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\VMwareCommand\obj\Debug\VMwareCommand.pdb

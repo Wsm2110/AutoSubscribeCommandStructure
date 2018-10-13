@@ -1,0 +1,7 @@
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Entities.dll.config
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Entities.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Entities.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.pdb

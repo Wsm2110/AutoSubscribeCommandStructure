@@ -1,0 +1,20 @@
+﻿using Entities.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Entities.Arguments
+{
+    public class RegisterCommandsArgs
+    {
+        /// <summary>
+        /// Gets or sets the sub commands.
+        /// </summary>
+        /// <value>
+        /// The sub commands.
+        /// </value>
+       public IEnumerable<SubCommand> SubCommands { get; set; }
+    }
+}
