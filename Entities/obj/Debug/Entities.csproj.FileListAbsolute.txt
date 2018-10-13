@@ -5,3 +5,5 @@ C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Ent
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Entities.pdb
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.dll
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\obj\Debug\Entities.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Autofac.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Entities\bin\Debug\Autofac.xml

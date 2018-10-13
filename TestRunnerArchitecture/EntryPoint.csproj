@@ -60,14 +60,6 @@
       <Project>{6d2adb26-4c83-452b-ad21-603661ee826a}</Project>
       <Name>Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InfraModule\InfraCommand.csproj">
-      <Project>{1cad5e61-3f7f-43d9-92af-1e5cec61d9d4}</Project>
-      <Name>InfraCommand</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VMwareCommand\VMwareCommand.csproj">
-      <Project>{33ab90ad-84b0-411e-b2a6-d192c3dfd74e}</Project>
-      <Name>VMwareCommand</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

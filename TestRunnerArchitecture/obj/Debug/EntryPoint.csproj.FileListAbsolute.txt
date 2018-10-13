@@ -12,8 +12,3 @@ C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Tes
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.csproj.CoreCompileInputs.cache
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.exe
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.pdb
-C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\VMwareCommand.dll
-C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\VMwareCommand.pdb
-C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\VMwareCommand.dll.config
-C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\InfraModule.dll
-C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\InfraModule.pdb
