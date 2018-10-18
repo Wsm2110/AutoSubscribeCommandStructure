@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace InfraModule
 {
-    public class InfraCommand: ICommandBuilder
+
+    public class InfraCommand : ICommandBuilder
     {
-           
+
         private readonly IEventAggregator _eventAggregator;
         private IList<SubCommand> _subCommands;
 
@@ -22,7 +23,7 @@ namespace InfraModule
         /// <param name="eventAggregator">The event aggregator.</param>
         public InfraCommand(IEventAggregator eventAggregator)
         {
-            _eventAggregator = eventAggregator;         
+            _eventAggregator = eventAggregator;
         }
 
         /// <summary>
@@ -32,7 +33,11 @@ namespace InfraModule
         {
             _subCommands = new List<SubCommand>
             {
-                new SubCommand("Test1", () => { })
+                new SubCommand("p", "prime", () => { Console.WriteLine("call from infra module"); }),
+                  new SubCommand("l", "load", () => { Console.WriteLine("call from infra module"); }),
+                    new SubCommand("a", "add", () => { Console.WriteLine("call from infra module"); }),
+                      new SubCommand("p", "remove", () => { Console.WriteLine("call from infra module"); }),
+                        new SubCommand("sd", "selfdestruct", () => { Console.WriteLine("call from infra module"); })
             };
         }
 
@@ -43,6 +48,7 @@ namespace InfraModule
         {
             _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
+                Module = "Infra",
                 SubCommands = _subCommands
             });
         }

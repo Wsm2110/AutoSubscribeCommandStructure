@@ -7,3 +7,5 @@ C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Inf
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraCommand.csproj.CoreCompileInputs.cache
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraModule.dll
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\obj\Debug\InfraModule.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\Autofac.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\InfraModule\bin\Debug\Autofac.xml

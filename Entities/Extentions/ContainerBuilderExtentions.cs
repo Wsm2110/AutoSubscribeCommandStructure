@@ -44,9 +44,7 @@ namespace Entities.Extentions
 
             return builder.RegisterInstance(instance);
         }
-
-
-
+          
         /// <summary>
         /// Traversals the specified dir.
         /// </summary>

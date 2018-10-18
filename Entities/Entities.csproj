@@ -62,6 +62,8 @@
     <Compile Include="Extentions\EventAggregatorExtenions.cs" />
     <Compile Include="Extentions\ExpressionExtensions.cs" />
     <Compile Include="Extentions\PortableReflectionExtensions.cs" />
+    <Compile Include="Extentions\StringExtentions.cs" />
+    <Compile Include="Models\ConsoleSubCommand.cs" />
     <Compile Include="Models\CoroutineExecutionContext.cs" />
     <Compile Include="Models\DefaultPlatformProvider.cs" />
     <Compile Include="Models\EventAggregator.cs" />

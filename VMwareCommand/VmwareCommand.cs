@@ -36,7 +36,7 @@ namespace VMwareCommand
         private void RegisterCommands()
         {
             _subCommands = new List<SubCommand>();
-            _subCommands.Add(new SubCommand("Test", () => { }));
+            _subCommands.Add(new SubCommand("Test", () => { Console.WriteLine("call from vmware command"); }));
         }
 
         /// <summary>
@@ -46,6 +46,7 @@ namespace VMwareCommand
         {
             _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
+                Module = nameof(VMwareCommand),
                 SubCommands = _subCommands
             });
         }

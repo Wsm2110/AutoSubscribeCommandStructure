@@ -14,7 +14,15 @@ namespace Entities.Models
         /// <value>
         /// The command.
         /// </value>
-        public Action Command { get; set; }
+        public Action Command { get; set; } 
+
+        /// <summary>
+        /// Gets or sets the long name.
+        /// </summary>
+        /// <value>
+        /// The long name.
+        /// </value>
+        public string LongName { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the identifier.
@@ -22,17 +30,25 @@ namespace Entities.Models
         /// <value>
         /// The identifier.
         /// </value>
-        public String Identifier { get; set; }
-        
+        public String ShortName { get; set; } = string.Empty;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SubCommand"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="action">The action.</param>
-        public SubCommand(string name, Action action)
+        public SubCommand(string shortName, string longName,  Action action)
         {
-            Identifier = name;
+            ShortName = shortName;
+            LongName = longName;
             Command = action;
         }
+
+        public SubCommand(string longName, Action action)
+        {
+            LongName = LongName;
+            Command = action;
+        } 
+
     }
 }

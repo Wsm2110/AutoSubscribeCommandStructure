@@ -12,3 +12,10 @@ C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\Tes
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.csproj.CoreCompileInputs.cache
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.exe
 C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\obj\Debug\EntryPoint.pdb
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\Colorful.Console.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\CommandLine.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\System.Console.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\CommandLine.xml
+C:\Users\Wiljan\Documents\Visual Studio 2017\Projects\TestRunnerArchitecture\TestRunnerArchitecture\bin\Debug\Newtonsoft.Json.xml

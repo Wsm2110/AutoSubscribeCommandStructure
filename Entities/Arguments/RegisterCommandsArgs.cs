@@ -9,6 +9,9 @@ namespace Entities.Arguments
 {
     public class RegisterCommandsArgs
     {
+
+        public string Module { get; set; }
+
         /// <summary>
         /// Gets or sets the sub commands.
         /// </summary>
