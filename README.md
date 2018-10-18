@@ -1,0 +1,2 @@
+# AutoSubscribeCommandStructure
+Nothing fancy - bored
