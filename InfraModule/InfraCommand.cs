@@ -13,9 +13,10 @@ namespace InfraModule
 
     public class InfraCommand : ICommandBuilder
     {
-
         private readonly IEventAggregator _eventAggregator;
-        private IList<SubCommand> _subCommands;
+
+        public string ModuleName { get; set; } = "Infra";
+        public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VmwareCommand"/> class.
@@ -31,7 +32,7 @@ namespace InfraModule
         /// </summary>
         private void RegisterCommands()
         {
-            _subCommands = new List<SubCommand>
+            SubCommands = new List<SubCommand>
             {
                 new SubCommand("p", "prime", () => { Console.WriteLine("call from infra module"); }),
                   new SubCommand("l", "load", () => { Console.WriteLine("call from infra module"); }),
@@ -49,7 +50,7 @@ namespace InfraModule
             _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
                 Module = "Infra",
-                SubCommands = _subCommands
+                Command = this
             });
         }
 

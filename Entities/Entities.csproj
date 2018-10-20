@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ConsoleError.cs" />
     <Compile Include="Extentions\ContainerBuilderExtentions.cs" />
     <Compile Include="Extentions\EnumerableExtensions.cs" />
     <Compile Include="Arguments\RegisterCommandsArgs.cs" />
@@ -63,11 +64,13 @@
     <Compile Include="Extentions\ExpressionExtensions.cs" />
     <Compile Include="Extentions\PortableReflectionExtensions.cs" />
     <Compile Include="Extentions\StringExtentions.cs" />
+    <Compile Include="Models\CommandEntryPoint.cs" />
     <Compile Include="Models\ConsoleSubCommand.cs" />
     <Compile Include="Models\CoroutineExecutionContext.cs" />
     <Compile Include="Models\DefaultPlatformProvider.cs" />
     <Compile Include="Models\EventAggregator.cs" />
     <Compile Include="Models\Execute.cs" />
+    <Compile Include="Models\ICommandEntryPoint.cs" />
     <Compile Include="Models\PlatformProvider.cs" />
     <Compile Include="Models\SubCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

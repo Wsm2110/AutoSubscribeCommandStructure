@@ -20,7 +20,7 @@ namespace Entities.Extentions
 
             if (!mod.Any())
             {
-                Console.WriteLine("Unable to find any arguments, input is most likely empty");
+                return string.Empty;
             }
 
             //logic
@@ -39,8 +39,7 @@ namespace Entities.Extentions
             var mod = input.Split(' ').ToList();
 
             if (mod.Count < 2)
-            {
-                Console.WriteLine("Unable to find subcommand...");
+            {         
                 return string.Empty;
             }
 

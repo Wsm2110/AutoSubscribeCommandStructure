@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using Entities.Contracts;
+using Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,6 @@ namespace Entities.Arguments
         /// <value>
         /// The sub commands.
         /// </value>
-       public IEnumerable<SubCommand> SubCommands { get; set; }
+       public ICommandBuilder Command { get; set; }
     }
 }

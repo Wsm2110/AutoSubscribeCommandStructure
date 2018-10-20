@@ -13,7 +13,9 @@ namespace VMwareCommand
     public class VmwareCommand : ICommandBuilder
     {
         private readonly IEventAggregator _eventAggregator;
-        private IList<SubCommand> _subCommands;
+
+        public string ModuleName { get; set; } = "Vmware";
+        public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="VmwareCommand"/> class.
@@ -34,9 +36,8 @@ namespace VMwareCommand
         /// Registers the commands.
         /// </summary>
         private void RegisterCommands()
-        {
-            _subCommands = new List<SubCommand>();
-            _subCommands.Add(new SubCommand("Test", () => { Console.WriteLine("call from vmware command"); }));
+        {     
+            SubCommands.Add(new SubCommand("t", "test", () => { Console.WriteLine("call from vmware command"); }));
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace VMwareCommand
             _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
                 Module = nameof(VMwareCommand),
-                SubCommands = _subCommands
+                Command = this
             });
         }
     }

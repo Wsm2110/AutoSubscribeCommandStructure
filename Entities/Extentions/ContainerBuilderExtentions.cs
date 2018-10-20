@@ -13,7 +13,6 @@ namespace Entities.Extentions
 {
     public static class ContainerBuilderExtentions
     {
-
         /// <summary>
         /// Registers the name of the instance by type.
         /// </summary>
