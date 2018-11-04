@@ -12,20 +12,33 @@ namespace VMwareCommand
 {
     public class VmwareCommand : ICommandBuilder
     {
-        private readonly IEventAggregator _eventAggregator;
-
-        public string ModuleName { get; set; } = "Vmware";
-        public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
+        /// <summary>
+        /// Gets or sets the event aggregator.
+        /// </summary>
+        /// <value>
+        /// The event aggregator.
+        /// </value>
+        public IEventAggregator EventAggregator { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VmwareCommand"/> class.
+        /// Gets or sets the name of the module.
         /// </summary>
-        /// <param name="eventAggregator">The event aggregator.</param>
-        public VmwareCommand(IEventAggregator eventAggregator)
-        {
-            _eventAggregator = eventAggregator;      
-        }
-
+        /// <value>
+        /// The name of the module.
+        /// </value>
+        /// 
+        public string ModuleName { get; set; } = "Vmware";
+        /// <summary>
+        /// Gets or sets the sub commands.
+        /// </summary>
+        /// <value>
+        /// The sub commands.
+        /// </value>
+        public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
+        
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         public void Initialize()
         {
             RegisterCommands();
@@ -37,19 +50,29 @@ namespace VMwareCommand
         /// </summary>
         private void RegisterCommands()
         {     
-            SubCommands.Add(new SubCommand("t", "test", () => { Console.WriteLine("call from vmware command"); }));
+            SubCommands.Add(new SubCommand("t", "test",  arguments => Test(arguments)));
         }
-
+        
         /// <summary>
         /// Notifies the commands.
         /// </summary>
         private void NotifyCommands()
         {
-            _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
+            EventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
                 Module = nameof(VMwareCommand),
                 Command = this
             });
         }
+
+        /// <summary>
+        /// Tests the specified a.
+        /// </summary>
+        /// <param name="a">a.</param>
+        public void Test(IArguments a)
+        {
+
+        }
+
     }
 }

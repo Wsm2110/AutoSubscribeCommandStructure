@@ -5,7 +5,8 @@ namespace TestRunnerArchitecture
 {
     public interface ICommandEntryPoint
     {
-        ICommandEntryPoint ParseArguments<T>();
+        IEventAggregator EventAggregator { get; set; }
+        ICommandEntryPoint ParseArguments();
         ICommandEntryPoint Execute();    
         void OnError(Action<ConsoleError, string> p);
         string[] GetModules();

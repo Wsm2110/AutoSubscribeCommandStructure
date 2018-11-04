@@ -11,39 +11,8 @@ using System.Threading.Tasks;
 
 namespace Entities.Extentions
 {
-    public static class ContainerBuilderExtentions
-    {
-        /// <summary>
-        /// Registers the name of the instance by type.
-        /// </summary>
-        /// <param name="builder">The builder.</param>
-        /// <param name="name">The name.</param>
-        /// <param name="args">The arguments.</param>
-        /// <returns></returns>
-        /// <exception cref="NullReferenceException">
-        /// type
-        /// or
-        /// instance
-        /// </exception>
-        public static IRegistrationBuilder<dynamic, SimpleActivatorData, SingleRegistrationStyle> RegisterInstanceByTypeName(this ContainerBuilder builder, string name, object[] args = null)
-        {
-            var type = GetModules().SelectMany(item => item.DefinedTypes).FirstOrDefault(t => t.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-
-            if (type == null)
-            {
-                throw new NullReferenceException(nameof(type));
-            }
-
-            var instance = Activator.CreateInstance(type, args);
-
-            if (instance == null)
-            {
-                throw new NullReferenceException(nameof(instance));
-            }
-
-            return builder.RegisterInstance(instance);
-        }
-          
+    public static class ModuleExtentions
+    {          
         /// <summary>
         /// Traversals the specified dir.
         /// </summary>

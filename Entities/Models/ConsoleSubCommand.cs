@@ -22,7 +22,7 @@ namespace Entities.Models
         /// <param name="shortName"></param>
         /// <param name="longName"></param>
         /// <param name="action">The action.</param>
-        public ConsoleSubCommand(string module, string shortName, string longName, Action action) : base(shortName, longName, action)
+        public ConsoleSubCommand(string module, string shortName, string longName, Action<IArguments> action) : base(shortName, longName, action)
         {
             this.Module = module;
         }

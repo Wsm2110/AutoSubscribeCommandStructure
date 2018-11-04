@@ -5,6 +5,7 @@ using Entities.Contracts;
 using Entities.Extentions;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using Console = Colorful.Console;
 
@@ -15,34 +16,42 @@ namespace TestRunnerArchitecture
     public class Program
     {
         private static IContainer _container;
-        private static ICommandEntryPoint commandEntryPoint;
-        private static IEventAggregator eventAggregator;
 
         static void Main(string[] args)
         {
             Console.BackgroundColor = Color.Purple;
             Console.Clear();
 
-            eventAggregator = new EventAggregator();
-            commandEntryPoint = new CommandEntryPoint(eventAggregator);
+            int DA = 244;
+            int V = 212;
+            int ID = 255;
+
+            Console.WriteAscii("TestRunner", Color.FromArgb(DA, V, ID));
+
+            Console.WriteLine("Version 1.9.2.1 rc1");
+            Console.WriteLine('\n');
+
+            Console.Write(" Usage: ", Color.Yellow);
+            Console.Write("<command> <subcommand> [<arguments>]", Color.White);
 
             IoCInitializer();
 
             PrintModules();
 
+
             while (true)
             {
-                commandEntryPoint.FindCommand(Console.ReadLine())
-                                 .ParseArguments<Type>()
+                _container.Resolve<ICommandEntryPoint>().FindCommand(Console.ReadLine())
+                                 .ParseArguments()
                                  .Execute()
-                                 .OnError((e, module) =>  Console.WriteLine($"{module} [{e}]"));
+                                 .OnError((e, module) => Console.WriteLine($"{module} [{e}]"));
             }
         }
 
         private static void PrintModules()
         {
             Console.WriteLine("Modules loaded:");
-            Console.WriteLine(string.Join("\n", commandEntryPoint.GetModules()));
+            //   Console.WriteLine(string.Join("\n", _container.Resolve<ICommandEntryPoint>().GetModules()));
         }
 
         /// <summary>
@@ -57,26 +66,42 @@ namespace TestRunnerArchitecture
             builder.RegisterAssemblyTypes(entry)
                    .AsImplementedInterfaces();
 
-            // Scan modules folder
-            ContainerBuilderExtentions.GetModules().Apply(item => builder.RegisterAssemblyTypes(item)
-                                                                         .AsImplementedInterfaces());
-
             //register eventaggregator
-            builder.RegisterInstance(eventAggregator)
-                   .As<IEventAggregator>();
-
-            //resolve modules dynamically without using project references
-            builder.RegisterInstanceByTypeName("VmwareCommand", new object[] { eventAggregator })
-                   .Named("c1", typeof(ICommandBuilder))
-                   .OnActivated(args => (args.Instance as ICommandBuilder).Initialize())
+            builder.RegisterType<EventAggregator>()
+                   .As<IEventAggregator>()
                    .SingleInstance()
                    .AutoActivate();
 
-            builder.RegisterInstanceByTypeName("InfraCommand", new object[] { eventAggregator })
-                   .Named("c2", typeof(ICommandBuilder))
-                   .OnActivated(args => (args.Instance as ICommandBuilder).Initialize())
-                   .SingleInstance()
-                   .AutoActivate();
+
+            // Scan modules folder
+            var plugins = ModuleExtentions.GetModules();
+
+            //register external assemblies
+            builder.RegisterAssemblyTypes(plugins.ToArray()).Where(t => t.Name.EndsWith("Command")).As<ICommandBuilder>()
+                                                            .PropertiesAutowired()
+                                                            .OnActivated(args =>
+                                                            {
+                                                                var command = (args.Instance as ICommandBuilder);
+                                                                if (command != null)
+                                                                {
+                                                                    command.Initialize();
+                                                                    return;
+                                                                }
+
+                                                                throw new NullReferenceException($"Unable to cast object to {nameof(ICommandBuilder)}");
+                                                            })
+                                                            .AutoActivate()
+                                                            .SingleInstance();
+
+            //should always be last 
+            builder.RegisterType<CommandEntryPoint>().As<ICommandEntryPoint>()
+                                                     .OnActivated(item =>
+                                                     {
+                                                         item.Instance.EventAggregator.Subscribe(item.Instance);
+                                                     })
+                                                     .PropertiesAutowired()
+                                                     .SingleInstance()
+                                                     .AutoActivate();
 
             _container = builder.Build();
         }

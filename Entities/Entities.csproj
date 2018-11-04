@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ConsoleError.cs" />
-    <Compile Include="Extentions\ContainerBuilderExtentions.cs" />
+    <Compile Include="Extentions\moduleExtentions.cs" />
     <Compile Include="Extentions\EnumerableExtensions.cs" />
     <Compile Include="Arguments\RegisterCommandsArgs.cs" />
     <Compile Include="Arguments\ResultCompletionEventArgs.cs" />
@@ -70,7 +70,8 @@
     <Compile Include="Models\DefaultPlatformProvider.cs" />
     <Compile Include="Models\EventAggregator.cs" />
     <Compile Include="Models\Execute.cs" />
-    <Compile Include="Models\ICommandEntryPoint.cs" />
+    <Compile Include="Models\IArguments.cs" />
+    <Compile Include="Contracts\ICommandEntryPoint.cs" />
     <Compile Include="Models\PlatformProvider.cs" />
     <Compile Include="Models\SubCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
