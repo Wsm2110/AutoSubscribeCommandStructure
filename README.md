@@ -1,2 +1,2 @@
 # AutoSubscribeCommandStructure
-Nothing fancy - bored
+Concept code
