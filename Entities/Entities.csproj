@@ -49,7 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ConsoleError.cs" />
-    <Compile Include="Extentions\moduleExtentions.cs" />
+    <Compile Include="Extentions\ContainerBuiderExtentions.cs" />
+    <Compile Include="Extentions\ModuleExtentions.cs" />
     <Compile Include="Extentions\EnumerableExtensions.cs" />
     <Compile Include="Arguments\RegisterCommandsArgs.cs" />
     <Compile Include="Arguments\ResultCompletionEventArgs.cs" />

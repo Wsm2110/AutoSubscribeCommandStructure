@@ -12,13 +12,15 @@ namespace VMwareCommand
 {
     public class VmwareCommand : ICommandBuilder
     {
-        /// <summary>
-        /// Gets or sets the event aggregator.
-        /// </summary>
-        /// <value>
-        /// The event aggregator.
-        /// </value>
-        public IEventAggregator EventAggregator { get; set; }
+
+        #region Fields
+
+        private readonly IEventAggregator eventAggregator;
+        private IEventAggregator _eventAggregator;
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// Gets or sets the name of the module.
@@ -35,7 +37,18 @@ namespace VMwareCommand
         /// The sub commands.
         /// </value>
         public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
-        
+
+        #endregion
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VmwareCommand"/> class.
+        /// </summary>
+        /// <param name="eventAggregator">The event aggregator.</param>
+        public VmwareCommand(IEventAggregator eventAggregator)
+        {
+            _eventAggregator = eventAggregator;
+        }
+
         /// <summary>
         /// Initializes this instance.
         /// </summary>
@@ -49,16 +62,16 @@ namespace VMwareCommand
         /// Registers the commands.
         /// </summary>
         private void RegisterCommands()
-        {     
-            SubCommands.Add(new SubCommand("t", "test",  arguments => Test(arguments)));
+        {
+            SubCommands.Add(new SubCommand("t", "test", arguments => Test(arguments)));
         }
-        
+
         /// <summary>
         /// Notifies the commands.
         /// </summary>
         private void NotifyCommands()
         {
-            EventAggregator.PublishOnUIThread(new RegisterCommandsArgs
+            _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
                 Module = nameof(VMwareCommand),
                 Command = this

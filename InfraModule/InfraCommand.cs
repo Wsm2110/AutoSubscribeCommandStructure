@@ -13,6 +13,8 @@ namespace InfraModule
 
     public class InfraCommand : ICommandBuilder
     {
+        private readonly IEventAggregator _eventAggregator;
+
         /// <summary>
         /// Gets or sets the name of the module.
         /// </summary>
@@ -27,13 +29,15 @@ namespace InfraModule
         /// The sub commands.
         /// </value>
         public IList<SubCommand> SubCommands { get; set; } = new List<SubCommand>();
+        
         /// <summary>
-        /// Gets or sets the event aggregator.
+        /// Initializes a new instance of the <see cref="VmwareCommand"/> class.
         /// </summary>
-        /// <value>
-        /// The event aggregator.
-        /// </value>
-        public IEventAggregator EventAggregator { get; set; }
+        /// <param name="eventAggregator">The event aggregator.</param>
+        public InfraCommand(IEventAggregator eventAggregator)
+        {
+            _eventAggregator = eventAggregator;
+        }
         
         /// <summary>
         /// Registers the commands.
@@ -55,7 +59,7 @@ namespace InfraModule
         /// </summary>
         private void NotifyCommands()
         {
-            EventAggregator.PublishOnUIThread(new RegisterCommandsArgs
+            _eventAggregator.PublishOnUIThread(new RegisterCommandsArgs
             {
                 Module = "Infra",
                 Command = this

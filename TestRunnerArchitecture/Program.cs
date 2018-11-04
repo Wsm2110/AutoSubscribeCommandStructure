@@ -50,8 +50,8 @@ namespace TestRunnerArchitecture
 
         private static void PrintModules()
         {
-            Console.WriteLine("Modules loaded:");
-            //   Console.WriteLine(string.Join("\n", _container.Resolve<ICommandEntryPoint>().GetModules()));
+            Console.WriteLine("\n Modules loaded:");
+            Console.WriteLine(string.Join("\n", _container.Resolve<ICommandEntryPoint>().GetModules()));
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace TestRunnerArchitecture
 
             //register external assemblies
             builder.RegisterAssemblyTypes(plugins.ToArray()).Where(t => t.Name.EndsWith("Command")).As<ICommandBuilder>()
-                                                            .PropertiesAutowired()
+                                                            .SingleInstance()
                                                             .OnActivated(args =>
                                                             {
                                                                 var command = (args.Instance as ICommandBuilder);
@@ -87,13 +87,11 @@ namespace TestRunnerArchitecture
                                                                     command.Initialize();
                                                                     return;
                                                                 }
-
-                                                                throw new NullReferenceException($"Unable to cast object to {nameof(ICommandBuilder)}");
                                                             })
-                                                            .AutoActivate()
-                                                            .SingleInstance();
+                                                            .AutoActivate();
+                                                           
 
-            //should always be last 
+            //should always be last - (autoactivate) last in, first out
             builder.RegisterType<CommandEntryPoint>().As<ICommandEntryPoint>()
                                                      .OnActivated(item =>
                                                      {

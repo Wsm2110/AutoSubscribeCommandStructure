@@ -9,9 +9,7 @@ namespace Entities.Contracts
 {
     public interface ICommandBuilder
     {
-
-        IEventAggregator EventAggregator { get; set; }
-
+        
         /// <summary>
         /// Gets or sets the name of the module.
         /// </summary>
